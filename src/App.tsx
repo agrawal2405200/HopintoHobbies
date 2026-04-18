@@ -467,7 +467,7 @@ const TutorListingPage = ({ hobby, onBookClick }: { hobby: string | null, onBook
   return (
     <div className="pt-40 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-5xl font-display mb-12">{hobby ? `${hobby} Mentors` : 'Discover Mentors'}</h2>
+        <h2 className="text-5xl font-display mb-12">{hobby ? `${hobby} Mentors` : 'Discove Mentors'}</h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {tutors.map((tutor) => (
