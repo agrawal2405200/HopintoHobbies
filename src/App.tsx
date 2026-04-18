@@ -238,7 +238,7 @@ const RentSpaceModal = ({ space, onConfirm, onClose }: { space: Space; onConfirm
       <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="bg-white p-10 rounded-[3rem] shadow-2xl max-w-xl w-full relative">
         <button onClick={onClose} className="absolute top-6 right-6 p-2 bg-pastel-rose rounded-full"><X className="w-5 h-5"/></button>
         <div className="flex items-center gap-4 mb-8">
-          <img src="/images/gabriel-gurrola-2UuhMZEChdc-unsplash.jpg" alt="description" /className="w-16 h-16 rounded-2xl object-cover" referrerPolicy="no-referrer" />
+          <img src="/images/gabriel-gurrola-2UuhMZEChdc-unsplash.jpg" alt="description" className="w-16 h-16 rounded-2xl object-cover" referrerPolicy="no-referrer" />
           <div>
             <h2 className="text-2xl font-display">Rent {space.name}</h2>
             <p className="text-accent-rose font-bold text-sm">₹{space.price}/hr • {space.location}</p>
@@ -367,7 +367,7 @@ const LandingPage = ({ onStartQuiz, onExplore }: { onStartQuiz: () => void, onEx
                 onClick={onExplore}
               >
                
-                <img src= "/images/gabriel-gurrola-2UuhMZEChdc-unsplash.jpg" alt="description" /className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
+                <img src= "/images/gabriel-gurrola-2UuhMZEChdc-unsplash.jpg" alt="description" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-ink/20 group-hover:bg-ink/40 transition-colors" />
                 <div className="absolute inset-x-0 bottom-0 p-8 flex justify-between items-end">
                   <h3 className="text-2xl text-white font-display">{hobby.name}</h3>
