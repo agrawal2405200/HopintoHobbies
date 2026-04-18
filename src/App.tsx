@@ -404,7 +404,7 @@ const SpacesPage = ({ onListSpace, onRentSpace }: { onListSpace: () => void, onR
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {spaces.map(space => (
             <div key={space.id} className="bg-white p-6 rounded-[3rem] border border-white shadow-sm hover:shadow-xl transition-all">
-              <img src= "/images/gabriel-gurrola-2UuhMZEChdc-unsplash.jpg" alt="description" / className="w-full h-64 rounded-[2rem] object-cover mb-6" referrerPolicy="no-referrer" />
+              <img src= "/images/gabriel-gurrola-2UuhMZEChdc-unsplash.jpg" alt="description" className="w-full h-64 rounded-[2rem] object-cover mb-6" referrerPolicy="no-referrer" />
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-2xl font-display">{space.name}</h3>
                 <div className="text-accent-rose font-bold">₹{space.price}/hr</div>
@@ -475,7 +475,7 @@ const TutorListingPage = ({ hobby, onBookClick }: { hobby: string | null, onBook
               <div className="flex flex-col md:flex-row gap-10">
                 <div className="w-full md:w-1/2 flex flex-col">
                   <div className="relative group cursor-pointer mb-6 rounded-[2.5rem] overflow-hidden aspect-square border-4 border-pastel-rose bg-pastel-rose">
-                    <img src= "/images/gabriel-gurrola-2UuhMZEChdc-unsplash.jpg" alt="description" / className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src= "/images/gabriel-gurrola-2UuhMZEChdc-unsplash.jpg" alt="description" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                     
                     {/* Badges Overlay */}
                     <div className="absolute top-4 left-4 flex flex-col gap-2">
