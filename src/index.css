@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-pastel-rose: #FFF5F5;
+  --color-pastel-lavender: #F8F7FF;
+  --color-pastel-mint: #F2FAF7;
+  --color-pastel-blue: #F0F9FF;
+  --color-pastel-peach: #FFF9F5;
+  
+  --color-accent-rose: #EB8787;
+  --color-accent-mint: #78C2AD;
+  --color-accent-purple: #9287EB;
+  
+  --color-ink: #2D3436;
+}
+
+@layer base {
+  body {
+    @apply bg-pastel-rose text-ink font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight text-ink/90;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+.glass {
+  @apply bg-white/40 backdrop-blur-xl border border-white/40 shadow-sm;
+}
+
+.btn-primary {
+  @apply bg-accent-rose text-white px-8 py-3.5 rounded-2xl font-semibold shadow-lg shadow-accent-rose/20 transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50;
+}
+
+.btn-secondary {
+  @apply bg-white/80 text-ink border border-white px-8 py-3.5 rounded-2xl font-semibold shadow-sm transition-all hover:bg-white;
+}
+
+.card-pastel {
+  @apply bg-white/60 border border-white rounded-[2.5rem] p-8 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-accent-rose/5;
+}
