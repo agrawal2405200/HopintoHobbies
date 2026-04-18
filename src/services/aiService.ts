@@ -8,14 +8,11 @@ export interface HobbyMatch {
   difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
 }
 
-export async function matchHobby(answers: string[]): Promise<HobbyMatch[]> {
-  // FIX: "gemini-3-flash-preview" does not exist — corrected to "gemini-2.0-flash"
+export async function matchHobby(answers: string[]) {
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
-    contents: `Based on these answers to a personal interest quiz, match the user with 3 hobbies that suit them best.
-    Answers: ${answers.join(', ')}
-    
-    Return exactly 3 hobby recommendations as a JSON array.`,
+    model: "gemini-3-flash-preview",
+    contents: `Based on these answers to a personal interest quiz, match the user with 3 hobbies.
+    Answers: ${answers.join(', ')}`,
     config: {
       responseMimeType: "application/json",
       responseSchema: {
