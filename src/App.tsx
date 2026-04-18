@@ -3,6 +3,7 @@ import { Search, MapPin, Star, ShieldCheck, Play, ArrowRight, MessageSquare, Men
 import { motion, AnimatePresence } from 'motion/react';
 import { matchHobby, HobbyMatch } from './services/aiService';
 import { Hobby, Tutor, Space } from './types.ts';
+import { hobbies as allHobbies, tutors as allTutors, spaces as allSpaces } from './data';
 
 // --- Shared Components ---
 
@@ -326,11 +327,7 @@ const MentorApplyModal = ({ onClose, onComplete }: { onClose: () => void; onComp
 // --- Pages ---
 
 const LandingPage = ({ onStartQuiz, onExplore }: { onStartQuiz: () => void, onExplore: () => void }) => {
-  const [hobbies, setHobbies] = useState<Hobby[]>([]);
-
-  useEffect(() => {
-    fetch('/api/hobbies').then(res => res.json()).then(setHobbies);
-  }, []);
+  const hobbies = allHobbies;
 
   return (
     <div className="pt-20">
@@ -384,10 +381,7 @@ const LandingPage = ({ onStartQuiz, onExplore }: { onStartQuiz: () => void, onEx
 };
 
 const SpacesPage = ({ onListSpace, onRentSpace }: { onListSpace: () => void, onRentSpace: (s: Space) => void }) => {
-  const [spaces, setSpaces] = useState<Space[]>([]);
-  useEffect(() => {
-    fetch('/api/spaces').then(res => res.json()).then(setSpaces);
-  }, []);
+  const spaces = allSpaces;
 
   return (
     <div className="pt-40 pb-20 px-6">
@@ -451,17 +445,10 @@ const MentorEnrollPage = ({ onApply }: { onApply: () => void }) => (
 );
 
 const TutorListingPage = ({ hobby, onBookClick }: { hobby: string | null, onBookClick: (tutor: Tutor) => void }) => {
-  const [tutors, setTutors] = useState<Tutor[]>([]);
-  const [loading, setLoading] = useState(true);
+  const tutors = hobby
+    ? allTutors.filter(t => t.hobby.toLowerCase() === hobby.toLowerCase())
+    : allTutors;
   const [activeReviews, setActiveReviews] = useState<string | null>(null);
-
-  useEffect(() => {
-    const url = hobby ? `/api/tutors?hobby=${hobby}` : '/api/tutors';
-    fetch(url).then(res => res.json()).then(data => {
-      setTutors(data);
-      setLoading(false);
-    });
-  }, [hobby]);
 
   return (
     <div className="pt-40 pb-20 px-6">
