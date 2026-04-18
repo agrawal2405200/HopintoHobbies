@@ -203,7 +203,7 @@ const BookingModal = ({ tutor, onConfirm, onClose }: { tutor: Tutor; onConfirm: 
       <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="bg-white p-10 rounded-[3rem] shadow-2xl max-w-xl w-full relative">
         <button onClick={onClose} className="absolute top-6 right-6 p-2 bg-pastel-rose rounded-full"><X className="w-5 h-5"/></button>
         <div className="flex items-center gap-4 mb-8">
-          <img src="/images/your-photo.png" />
+         <img src="/images/gabriel-gurrola-2UuhMZEChdc-unsplash.jpg" />
           <div>
             <h2 className="text-2xl font-display">Confirm Trial with {tutor.name}</h2>
             <p className="text-accent-rose font-bold text-sm">Category: {tutor.hobby}</p>
