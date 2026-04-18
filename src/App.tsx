@@ -203,7 +203,7 @@ const BookingModal = ({ tutor, onConfirm, onClose }: { tutor: Tutor; onConfirm: 
       <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="bg-white p-10 rounded-[3rem] shadow-2xl max-w-xl w-full relative">
         <button onClick={onClose} className="absolute top-6 right-6 p-2 bg-pastel-rose rounded-full"><X className="w-5 h-5"/></button>
         <div className="flex items-center gap-4 mb-8">
-         <img src="/images/gabriel-gurrola-2UuhMZEChdc-unsplash.jpg" />
+          <img src={tutor.image} alt={tutor.name} className="w-16 h-16 rounded-2xl object-cover" referrerPolicy="no-referrer" />
           <div>
             <h2 className="text-2xl font-display">Confirm Trial with {tutor.name}</h2>
             <p className="text-accent-rose font-bold text-sm">Category: {tutor.hobby}</p>
@@ -238,7 +238,7 @@ const RentSpaceModal = ({ space, onConfirm, onClose }: { space: Space; onConfirm
       <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="bg-white p-10 rounded-[3rem] shadow-2xl max-w-xl w-full relative">
         <button onClick={onClose} className="absolute top-6 right-6 p-2 bg-pastel-rose rounded-full"><X className="w-5 h-5"/></button>
         <div className="flex items-center gap-4 mb-8">
-          <img src="/images/gabriel-gurrola-2UuhMZEChdc-unsplash.jpg" alt="description" className="w-16 h-16 rounded-2xl object-cover" referrerPolicy="no-referrer" />
+          <img src={space.image} alt={space.name} className="w-16 h-16 rounded-2xl object-cover" referrerPolicy="no-referrer" />
           <div>
             <h2 className="text-2xl font-display">Rent {space.name}</h2>
             <p className="text-accent-rose font-bold text-sm">₹{space.price}/hr • {space.location}</p>
@@ -366,8 +366,7 @@ const LandingPage = ({ onStartQuiz, onExplore }: { onStartQuiz: () => void, onEx
                 className={`h-80 rounded-[2.5rem] overflow-hidden group relative cursor-pointer ${i % 2 === 0 ? 'mt-0' : 'md:mt-12'}`}
                 onClick={onExplore}
               >
-               
-                <img src= "/images/gabriel-gurrola-2UuhMZEChdc-unsplash.jpg" alt="description" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
+                <img src={hobby.image} alt={hobby.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-ink/20 group-hover:bg-ink/40 transition-colors" />
                 <div className="absolute inset-x-0 bottom-0 p-8 flex justify-between items-end">
                   <h3 className="text-2xl text-white font-display">{hobby.name}</h3>
@@ -404,7 +403,7 @@ const SpacesPage = ({ onListSpace, onRentSpace }: { onListSpace: () => void, onR
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {spaces.map(space => (
             <div key={space.id} className="bg-white p-6 rounded-[3rem] border border-white shadow-sm hover:shadow-xl transition-all">
-              <img src= "/images/gabriel-gurrola-2UuhMZEChdc-unsplash.jpg" alt="description" className="w-full h-64 rounded-[2rem] object-cover mb-6" referrerPolicy="no-referrer" />
+              <img src={space.image} alt={space.name} className="w-full h-64 rounded-[2rem] object-cover mb-6" referrerPolicy="no-referrer" />
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-2xl font-display">{space.name}</h3>
                 <div className="text-accent-rose font-bold">₹{space.price}/hr</div>
@@ -475,7 +474,7 @@ const TutorListingPage = ({ hobby, onBookClick }: { hobby: string | null, onBook
               <div className="flex flex-col md:flex-row gap-10">
                 <div className="w-full md:w-1/2 flex flex-col">
                   <div className="relative group cursor-pointer mb-6 rounded-[2.5rem] overflow-hidden aspect-square border-4 border-pastel-rose bg-pastel-rose">
-                    <img src= "/images/gabriel-gurrola-2UuhMZEChdc-unsplash.jpg" alt="description" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src={tutor.image} alt={tutor.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                     
                     {/* Badges Overlay */}
                     <div className="absolute top-4 left-4 flex flex-col gap-2">
